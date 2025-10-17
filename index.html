@@ -1,0 +1,463 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Forcet Akademi Spor Kulübü</title>
+<meta name="description" content="Forcet Akademi — Oynayarak öğren, eğlenerek geliş. Basketbol & Voleybol." />
+<style>
+  :root{
+    --bg1:#b91c1c; /* red-700 */
+    --bg2:#000000;
+    --card:#7f1d1d;
+    --muted:#e6e6e6;
+    --glass: rgba(255,255,255,0.06);
+    --accent: #25D366;
+    --shadow: 0 8px 30px rgba(0,0,0,0.6);
+    font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  }
+  html,body{height:100%;margin:0}
+  body{background:linear-gradient(180deg,var(--bg1),var(--bg2));color:#fff;min-height:100vh;-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  .container{max-width:1100px;margin:0 auto;padding:28px}
+  /* navbar */
+  .nav{position:fixed;left:0;right:0;top:0;z-index:40;background:rgba(0,0,0,0.7);backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:space-between;padding:10px 20px}
+  .nav .brand{font-weight:700;letter-spacing:1px}
+  .nav .links a{margin-left:18px;text-decoration:none;font-weight:600;opacity:0.95}
+  /* hero */
+  header.hero{padding:100px 20px 60px;text-align:center}
+  header.hero h1{font-size:36px;margin:0 0 8px}
+  @media(min-width:768px){ header.hero h1{font-size:56px} }
+  header.hero p{opacity:0.9;margin:0}
+  /* sections */
+  section{padding:36px 20px}
+  h2{font-size:28px;margin:0 0 18px}
+  .grid{display:grid;gap:20px}
+  .grid-2{grid-template-columns:1fr; }
+  @media(min-width:768px){ .grid-2{grid-template-columns:repeat(2,1fr)} }
+  .card{background:linear-gradient(180deg,rgba(0,0,0,0.14),rgba(0,0,0,0.25));border-radius:14px;padding:18px;box-shadow:var(--shadow);border:1px solid rgba(255,255,255,0.04)}
+  .card h3{margin:0 0 8px}
+  .muted{color:#d1d5db}
+  .small{font-size:13px}
+  /* gallery */
+  .gallery-item-new {
+    width:100%;
+    box-sizing: border-box;
+    height: 100%;
+    overflow: hidden;
+    
+    }
+  .gallery {box-sizing: border-box;}
+  .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px}
+  .gallery button{position:relative;padding:0;border:0;background:var(--glass);border-radius:8px;overflow:hidden;cursor:pointer}
+  .gallery img{width:100%;height:100%;object-fit:cover;display:block;aspect-ratio:1/1}
+  /* contact */
+  .contact-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:12px;align-items:center}
+  .contact-item{display:flex;gap:10px;align-items:center;flex-wrap:wrap;justify-content:center}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:8px;border:1px solid rgba(255,255,255,0.12);background:transparent;color:inherit;font-weight:600;cursor:pointer}
+  .btn.small{padding:6px 8px;font-size:13px}
+  .copy-btn{width:40px;height:40px;border-radius:8px;display:grid;place-items:center;background:transparent;border:1px solid rgba(255,255,255,0.06);cursor:pointer}
+  /* footer */
+  footer{padding:18px;text-align:center;background:rgba(0,0,0,0.2);margin-top:18px}
+  /* lightbox */
+  .lb{position:fixed;inset:0;z-index:1000;background:rgba(0,0,0,0.92);display:flex;align-items:center;justify-content:center;padding:24px;visibility:hidden;opacity:0;transition:opacity .18s}
+  .lb.open{visibility:visible;opacity:1}
+  .lb .panel{max-width:1100px;width:100%;max-height:86vh;display:flex;align-items:center;justify-content:center}
+  .lb img{max-width:100%;max-height:80vh;object-fit:contain;border-radius:8px}
+  .lb .close,.lb .navbtn{position:fixed;background:rgba(255,255,255,0.06);border:0;color:#fff;padding:10px;border-radius:999px;cursor:pointer}
+  .lb .close{top:24px;right:24px}
+  .lb .navbtn.left{left:20px;top:50%;transform:translateY(-50%)}
+  .lb .navbtn.right{right:20px;top:50%;transform:translateY(-50%)}
+  .caption{position:fixed;left:0;right:0;bottom:18px;text-align:center;color:rgba(255,255,255,0.85)}
+  /* tiny */
+  code{background:rgba(255,255,255,0.04);padding:4px 6px;border-radius:6px;color:#fff}
+  .kicker{opacity:0.9;font-weight:600}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="brand">FORCET AKADEMİ</div>
+  <div class="links">
+    <a href="#branches" data-scroll>BRANŞLAR</a>
+    <a href="#neden-forcet" data-scroll>FORCET AKADEMİ</a>
+    <a href="#contact" data-scroll>İLETİŞİM</a>
+  </div>
+</nav>
+
+<main class="container">
+  <header class="hero" id="home">
+    <h1>FORCET AKADEMİ SPOR KULÜBÜMÜZE HOŞGELDİNİZ</h1>
+    <p class="kicker">OYNAYARAK ÖĞREN, EĞLENEREK GELİŞ!</p>
+  </header>
+
+  <!-- BRANŞLAR -->
+  <section id="branches">
+    <h2 class="text-center">Branşlar</h2>
+    <div class="grid grid-2">
+      <!-- Basketbol -->
+      <div class="card">
+        <h3>🏀 Basketbol</h3>
+        <p class="muted small">
+          Forcet Akademi Basketbol Okulu; Potanın minikleri basketbolu doğru tekniklerle öğrenmesini, mücadele azmini ve oyun zekâsını geliştirmesini hedefler. Burada sporcular yalnızca sahada değil, hayatın her alanında disiplin, özgüven ve ekip ruhuyla ilerler.
+        </p>
+        
+
+
+        <div  class="gallery" data-branch="basketbol-ozel ">
+          <button type="button"
+          class="gallery-item-new">
+          <img src="public/images/basketbol/1.jpg..9.jpg/Basketbol foto 1.jpg"
+          alt="Yeni Basketbol Fotoğrafı"
+          style="width: 100%;
+          height: 100%; object-fit: cover; display: block;">
+          </button>
+          <button type="button"
+          class="gallery-item-new">
+          <img src="public/images/basketbol/1.jpg..9.jpg/2.jpg"
+          alt="Yeni Basketbol Fotoğrafı"
+          style="width: 100%;
+          height: 100%; object-fit: cover; display: block;">
+          </button>
+          <button type="button"
+          class="gallery-item-new">
+          <img src="public/images/basketbol/1.jpg..9.jpg/3.jpg"
+          alt="Yeni Basketbol Fotoğrafı"
+          style="width: 100%;
+          height: 100%; object-fit: cover; display: block;">
+          </button>
+          <button type="button"
+          class="gallery-item-new">
+          <img src="public/images/basketbol/1.jpg..9.jpg/4.jpg"
+          alt="Yeni Basketbol Fotoğrafı"
+          style="width: 100%;
+          height: 100%; object-fit: cover; display: block;">
+          </button>
+          <button type="button"
+          class="gallery-item-new">
+          <img src="public/images/basketbol/1.jpg..9.jpg/5.jpg"
+          alt="Yeni Basketbol Fotoğrafı"
+          style="width: 100%;
+          height: 100%; object-fit: cover; display: block;">
+          </button>
+          <button type="button"
+          class="gallery-item-new">
+          <img src="public/images/basketbol/1.jpg..9.jpg/6.jpg"
+          alt="Yeni Basketbol Fotoğrafı"
+          style="width: 100%;
+          height: 100%; object-fit: cover; display: block;">
+          </button>
+          <button type="button"
+          class="gallery-item-new">
+          <img src="public/images/basketbol/1.jpg..9.jpg/7.jpg"
+          alt="Yeni Basketbol Fotoğrafı"
+          style="width: 100%;
+          height: 100%; object-fit: cover; display: block;">
+          </button>
+          <button type="button"
+          class="gallery-item-new">
+          <img src="public/images/basketbol/1.jpg..9.jpg/8.jpg"
+          alt="Yeni Basketbol Fotoğrafı"
+          style="width: 100%;
+          height: 100%; object-fit: cover; display: block;">
+          </button>
+          <button type="button"
+          class="gallery-item-new">
+          <img src="public/images/basketbol/1.jpg..9.jpg/9.jpg"
+          alt="Yeni Basketbol Fotoğrafı"
+          style="width: 100%;
+          height: 100%; object-fit: cover; display: block;">
+          </button>
+          
+          
+
+          <!-- Buttons with images inserted by JS -->
+          
+        </div>
+
+        
+      </div>
+
+      <!-- Voleybol -->
+      <div class="card">
+        <h3>🏐 Voleybol</h3>
+        <p class="muted small">
+          Forcet Akademi Voleybol Okulu; geleceğin yıldızları voleybolun heyecanını yaşarken takım ruhu, iletişim ve dayanışma becerilerini geliştirmesini sağlar. Çocuklar file önünde mücadele ederken aynı zamanda dostluk, sorumluluk ve paylaşmayı öğrenir.
+        </p>
+
+        <div class="gallery" data-branch="voleybol">
+          <button type="button"
+          class="gallery-item-new">
+          <img src="public/images/voleybol/1.jpg..9.jpg/1.jpg"
+          alt="Yeni Voleybol Fotoğrafı"
+          style="width: 100%;
+          height: 100%; object-fit: cover; display: block;">
+          </button>
+           <button type="button"
+          class="gallery-item-new">
+          <img src="public/images/voleybol/1.jpg..9.jpg/2.jpg"
+          alt="Yeni Voleybol Fotoğrafı"
+          style="width: 100%;
+          height: 100%; object-fit: cover; display: block;">
+          </button>
+           <button type="button"
+          class="gallery-item-new">
+          <img src="public/images/voleybol/1.jpg..9.jpg/3.jpg"
+          alt="Yeni Voleybol Fotoğrafı"
+          style="width: 100%;
+          height: 100%; object-fit: cover; display: block;">
+          </button>
+           <button type="button"
+          class="gallery-item-new">
+          <img src="public/images/voleybol/1.jpg..9.jpg/4.jpg"
+          alt="Yeni Voleybol Fotoğrafı"
+          style="width: 100%;
+          height: 100%; object-fit: cover; display: block;">
+          </button>
+           <button type="button"
+          class="gallery-item-new">
+          <img src="public/images/voleybol/1.jpg..9.jpg/5.jpg"
+          alt="Yeni Voleybol Fotoğrafı"
+          style="width: 100%;
+          height: 100%; object-fit: cover; display: block;">
+          </button>
+          <button type="button"
+          class="gallery-item-new">
+          <img src="public/images/voleybol/1.jpg..9.jpg/6.jpg"
+          alt="Yeni Voleybol Fotoğrafı"
+          style="width: 100%;
+          height: 100%; object-fit: cover; display: block;">
+          </button>
+            </button>
+          <button type="button"
+          class="gallery-item-new">
+          <img src="public/images/voleybol/1.jpg..9.jpg/7.jpg"
+          alt="Yeni Voleybol Fotoğrafı"
+          style="width: 100%;
+          height: 100%; object-fit: cover; display: block;">
+          </button>
+           </button>
+          <button type="button"
+          class="gallery-item-new">
+          <img src="public/images/voleybol/1.jpg..9.jpg/8.jpg"
+          alt="Yeni Voleybol Fotoğrafı"
+          style="width: 100%;
+          height: 100%; object-fit: cover; display: block;">
+          </button>
+           </button>
+          <button type="button"
+          class="gallery-item-new">
+          <img src="public/images/voleybol/1.jpg..9.jpg/9.jpg"
+          alt="Yeni Voleybol Fotoğrafı"
+          style="width: 100%;
+          height: 100%; object-fit: cover; display: block;">
+          </button>
+
+
+
+        </div>
+
+
+       
+      </div>
+    </div>
+  </section>
+
+  <!-- NEDEN FORCET -->
+  <section id="neden-forcet" style="background:#000;padding-top:28px;padding-bottom:28px;border-radius:12px;margin-top:6px">
+    <h2 style="text-align:center">Neden Forcet Akademi Spor Kulübü?</h2>
+    <div class="grid grid-2" style="max-width:900px;margin:18px auto">
+      <div class="card"><h3>🏅 Lisanslı Sporcu Olma İmkanı</h3><p class="muted">Çocuklarımızın sadece hobi amaçlı değil, profesyonel sporcu olma yolunda da ilerleyebilmesi için lisanslı sporcu fırsatları sunuyoruz.</p></div>
+      <div class="card"><h3>🚀 Güçlü Kadro, Güçlü Gelecek</h3><p class="muted">Tecrübeli antrenörlerimizle, modern yöntemlerle ve profesyonel bakış açısıyla sporcularımızı geleceğe hazırlıyoruz.</p></div>
+      <div class="card"><h3>🌟 Takım Ruhu ve Liderlik</h3><p class="muted">Her çocuk bir yıldızdır! Biz o yıldızı parlatıyor, sahada ve hayatın her alanında liderlik yapacak özgüveni kazandırıyoruz.</p></div>
+      <div class="card"><h3>💪🏻 Fiziksel ve Mental Gelişim</h3><p class="muted">Sadece spor becerilerini değil; özgüven, sorumluluk bilinci, liderlik ve sosyal iletişim becerilerini de geliştiriyoruz.</p></div>
+    </div>
+    <div style="max-width:520px;margin:12px auto">
+      <div class="card" style="text-align:center"><h3>🏆 Hayalini Kur, Forcet’te Gerçekleştir</h3><p class="muted">Lisanslı sporculuk yolunda ilk adımı bizimle at, hayallerini gerçeğe dönüştür!</p></div>
+    </div>
+  </section>
+
+  <!-- İLETİŞİM -->
+  <section id="contact" style="padding-top:36px;padding-bottom:36px;text-align:center">
+    <h2>İletişim</h2>
+    <p style="margin-top:6px">Sorularınız için bizimle iletişime geçin:</p>
+
+    <ul class="contact-list" style="margin-top:12px">
+      <li class="contact-item">
+        <!-- Gmail -->
+        <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2" fill="#fff"/><path d="M3 6l9 7 9-7" stroke="#EA4335" stroke-width="1.8" fill="none"/></svg>
+        <a href="mailto:forcetakademi@gmail.com" id="mail-link">forcetakademi@gmail.com</a>
+        <button class="copy-btn" data-copy="forcetakademi@gmail.com" title="Kopyala">📋</button>
+      </li>
+
+      <li class="contact-item">
+        <span>📞</span>
+        <a href="tel:+905052076071" id="phone1">Ara: 0505 207 60 71</a>
+        <button class="btn small" data-wa="905052076071">Bilgi al</button>
+        <button class="copy-btn" data-copy="05052076071" title="Kopyala">📋</button>
+      </li>
+
+      <li class="contact-item">
+        <span>📞</span>
+        <a href="tel:+905534048182" id="phone2">Ara: 0553 404 81 82</a>
+        <button class="btn small" data-wa="905534048182">Bilgi al</button>
+        <button class="copy-btn" data-copy="05534048182" title="Kopyala">📋</button>
+      </li>
+    </ul>
+  </section>
+
+  <footer>
+    <p>© <span id="year"></span> FORCET SPOR OKULU. TÜM HAKLARI SAKLIDIR.</p>
+  </footer>
+</main>
+
+<!-- Lightbox -->
+<div class="lb" id="lightbox" role="dialog" aria-modal="true" aria-hidden="true">
+  <button class="close" id="lb-close" aria-label="Kapat">✕</button>
+  <button class="navbtn left" id="lb-prev" aria-label="Önceki">◀</button>
+  <div class="panel"><img id="lb-img" src="" alt="Büyük foto" /></div>
+  <button class="navbtn right" id="lb-next" aria-label="Sonraki">▶</button>
+  <div class="caption" id="lb-caption"></div>
+</div>
+
+<script>
+/* ---------- helper & initial ---------- */
+document.getElementById('year').textContent = new Date().getFullYear();
+
+function isSandboxed(){
+  try { return window.self !== window.top; } catch { return true; }
+}
+async function copyToClipboard(text){
+  try {
+    if(navigator.clipboard && window.isSecureContext){ await navigator.clipboard.writeText(text); return true; }
+    const ta = document.createElement('textarea');
+    ta.value = text; ta.setAttribute('readonly',''); ta.style.position='fixed'; ta.style.top='-9999px';
+    document.body.appendChild(ta); ta.select(); document.execCommand('copy'); document.body.removeChild(ta);
+    return true;
+  } catch { return false; }
+}
+function safeOpen(url, opts={}){
+  const { fallbackUrl, copyText } = opts;
+  const isSpecial = url.startsWith('mailto:') || url.startsWith('tel:');
+  if(isSpecial && isSandboxed()){
+    if(copyText) copyToClipboard(copyText).catch(()=>{});
+    if(fallbackUrl) window.open(fallbackUrl,'_blank','noopener');
+    else if(copyText) alert(copyText + "\\nPanoya kopyalandı. Cihazınız bu tür bağlantıları engelliyor olabilir.");
+    return;
+  }
+  window.location.href = url;
+}
+
+/* ---------- smooth scroll (offset for fixed nav) ---------- */
+document.querySelectorAll('a[data-scroll]').forEach(a=>{
+  a.addEventListener('click', (e)=>{
+    e.preventDefault();
+    const id = a.getAttribute('href').replace('#','');
+    const el = document.getElementById(id);
+    if(!el) return;
+    const OFFSET = 80;
+    const y = el.getBoundingClientRect().top + window.scrollY - OFFSET;
+    window.scrollTo({top:y,behavior:'smooth'});
+  });
+});
+
+/* ---------- render galleries ---------- */
+function buildGallery(branch, rootEl){
+  let startIdx = 1; 
+  let endIdx = 9;
+
+  // Eğer bu, bizim elle müdahale ettiğimiz "basketbol-ozel" galerisi ise
+  if(rootEl.dataset.branch === 'basketbol-ozel'){
+    startIdx = 2; // 2. resimden (2. kutudan) başla
+    endIdx = 9;   // 9. resimde bitir. (Toplam 8 kutu JS tarafından eklenecek)
+    branch = 'basketbol'; // Resim klasörü adını geri basketbol olarak ayarla
+  }
+  
+  for(let i=startIdx; i<=endIdx; i++){ // Düzeltilmiş döngü
+   const btn = document.createElement('button');
+btn.type = 'button';
+const img = document.createElement('img');
+img.loading = 'lazy';
+img.alt = branch + ' foto ' + i;
+
+// HATA BURADAYDI! Ters tırnak (backtick: `) işaretlerini kullanmalısınız.
+img.src = images/$branch/$i.jpg; 
+
+img.onerror = ()=>{ img.style.opacity='0.12'; }; 
+btn.appendChild(img);
+
+// Lightbox olayını bağlama (lightbox'ın doğru fotoyu açması için)
+    btn.addEventListener('click', ()=> openLightbox('basketbol',i-1)); 
+    rootEl.appendChild(btn);
+  }
+
+}
+document.querySelectorAll('.gallery').forEach(g=>{
+  buildGallery(g.dataset.branch, g);
+});
+
+/* ---------- Lightbox ---------- */
+let lbState = {bases:[],idx:0,caption:''};
+function openLightbox(branch, idx){
+  const bases = Array.from({length:9},(_,i)=>`images/${branch}/${i+1}.jpg`);
+  lbState = {bases, idx, caption: branch};
+  showLightbox();
+}
+const lb = document.getElementById('lightbox');
+const lbImg = document.getElementById('lb-img');
+const lbCaption = document.getElementById('lb-caption');
+function showLightbox(){
+  lbImg.src = lbState.bases[lbState.idx];
+  lbCaption.textContent = `${lbState.caption} — ${lbState.idx+1} / ${lbState.bases.length}`;
+  lb.classList.add('open'); lb.setAttribute('aria-hidden','false');
+}
+function closeLightbox(){ lb.classList.remove('open'); lb.setAttribute('aria-hidden','true'); }
+function lbPrev(){ lbState.idx = (lbState.idx - 1 + lbState.bases.length) % lbState.bases.length; showLightbox(); }
+function lbNext(){ lbState.idx = (lbState.idx + 1) % lbState.bases.length; showLightbox(); }
+
+document.getElementById('lb-close').addEventListener('click', closeLightbox);
+document.getElementById('lb-prev').addEventListener('click', lbPrev);
+document.getElementById('lb-next').addEventListener('click', lbNext);
+document.addEventListener('keydown', (e)=>{ if(lb.classList.contains('open')){ if(e.key==='Escape') closeLightbox(); if(e.key==='ArrowLeft') lbPrev(); if(e.key==='ArrowRight') lbNext(); }});
+
+/* ---------- contact: copy buttons & whatsapp / mail safe open ---------- */
+document.querySelectorAll('.copy-btn').forEach(btn=>{
+  btn.addEventListener('click', async (e)=>{
+    const t = btn.getAttribute('data-copy');
+    const ok = await copyToClipboard(t);
+    btn.textContent = ok ? '✓' : '📋';
+    setTimeout(()=> btn.textContent = '📋',1200);
+  });
+});
+// "Bilgi al" buttons -> WA
+document.querySelectorAll('button[data-wa]').forEach(b=>{
+  b.addEventListener('click', (e)=>{
+    const wa = b.getAttribute('data-wa');
+    const tel = (wa.length===12 && wa.startsWith('90')) ? '+'+wa : '+'+wa;
+    const href = `https://wa.me/${wa}`;
+    // try tel first, fallback to whatsapp
+    if(isSandboxed()){
+      copyToClipboard(tel).catch(()=>{});
+      window.open(href,'_blank','noopener');
+      alert('Numara panoya kopyalandı ve WhatsApp açılmaya çalışıldı.');
+    } else {
+      // open whatsapp web
+      window.open(href,'_blank','noopener');
+    }
+  });
+});
+// mail link safeOpen
+document.getElementById('mail-link').addEventListener('click', (e)=>{
+  e.preventDefault();
+  safeOpen('mailto:forcetakademi@gmail.com',{ copyText:'forcetakademi@gmail.com', fallbackUrl:'https://mail.google.com/mail/?view=cm&fs=1&to=forcetakademi@gmail.com' });
+});
+
+/* ---------- small UX polish: hide nav on top spacing ---------- */
+(function(){
+  // fix top spacing for hero (nav height)
+  const hero = document.querySelector('.hero');
+  if(hero) hero.style.paddingTop = '110px';
+})();
+</script>
+</body>
+</html>
